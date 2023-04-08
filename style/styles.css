@@ -29,6 +29,7 @@ main section {
 }
 main section .main-container {
   width: fit-content;
+  max-width: 600px;
 }
 main section .main-container .left {
   padding: 0;
@@ -39,10 +40,11 @@ main section .main-container .left .left_img {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
+main section .main-container .left .left_img_mobile {
+  display: none;
+}
 main section .main-container .right {
-  padding-top: 3%;
-  padding-right: 5%;
-  padding-bottom: 3%;
+  padding: 3%;
 }
 main section .main-container .right .right_category {
   text-transform: uppercase;
@@ -82,9 +84,14 @@ main section .main-container .right .right_btn:active {
 }
 
 /* Media queries */
-@media only screen and (max-width: 600px) {
-  section .left img {
-    width: 100%;
+@media only screen and (max-width: 768px) {
+  section .left .left_img {
+    display: none;
+  }
+  section .left .left_img_mobile {
+    display: block !important;
+    object-fit: cover;
+    max-width: 100%;
     border-top-left-radius: 20px !important;
     border-top-right-radius: 20px !important;
     border-bottom-left-radius: 0px !important;
